@@ -4,24 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Análisis Exploratorio de Datos: Student Performance UCI | bookdown-demo.knit</title>
-  <meta name="description" content="" />
+  <title>EDA</title>
+  <meta name="description" content="EDA" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Análisis Exploratorio de Datos: Student Performance UCI | bookdown-demo.knit" />
+  <meta property="og:title" content="EDA" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Análisis Exploratorio de Datos: Student Performance UCI | bookdown-demo.knit" />
+  <meta name="twitter:title" content="EDA" />
   
   
   
 
+<meta name="author" content="Tu nombre" />
 
 
+<meta name="date" content="2025-08-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -122,7 +124,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -135,54 +136,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="1" data-path="aeiou.html"><a href="#an%C3%A1lisis-exploratorio-de-datos-student-performance-uci"><i class="fa fa-check"></i><b>1</b> Análisis Exploratorio de Datos: Student Performance UCI</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="#an%C3%A1lisis-exploratorio-de-datos-student-performance-uci"><i class="fa fa-check"></i><b>1</b> Análisis Exploratorio de Datos: Student Performance UCI</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="aeiou.html"><a href="#resumen-del-analisis"><i class="fa fa-check"></i><b>1.1</b> Resumen del Analisis</a></li>
-<li class="chapter" data-level="1.2" data-path="aeiou.html"><a href="#introducci%C3%B3n-y-objetivos"><i class="fa fa-check"></i><b>1.2</b> 1. Introducción y Objetivos</a>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="#resumen-del-analisis"><i class="fa fa-check"></i><b>1.1</b> Resumen del Analisis</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="#introducci%C3%B3n-y-objetivos"><i class="fa fa-check"></i><b>1.2</b> 1. Introducción y Objetivos</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="aeiou.html"><a href="#contexto-del-dataset"><i class="fa fa-check"></i><b>1.2.1</b> 1.1 Contexto del Dataset</a></li>
-<li class="chapter" data-level="1.2.2" data-path="aeiou.html"><a href="#objetivos-del-an%C3%A1lisis"><i class="fa fa-check"></i><b>1.2.2</b> 1.2 Objetivos del Análisis</a></li>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="#contexto-del-dataset"><i class="fa fa-check"></i><b>1.2.1</b> 1.1 Contexto del Dataset</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="#objetivos-del-an%C3%A1lisis"><i class="fa fa-check"></i><b>1.2.2</b> 1.2 Objetivos del Análisis</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="aeiou.html"><a href="#preparaci%C3%B3n-y-estructura-de-los-datos"><i class="fa fa-check"></i><b>1.3</b> 2. Preparación y Estructura de los Datos</a>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="#preparaci%C3%B3n-y-estructura-de-los-datos"><i class="fa fa-check"></i><b>1.3</b> 2. Preparación y Estructura de los Datos</a>
 <ul>
-<li class="chapter" data-level="1.3.1" data-path="aeiou.html"><a href="#carga-y-limpieza-de-datos"><i class="fa fa-check"></i><b>1.3.1</b> 2.1 Carga y Limpieza de Datos</a></li>
-<li class="chapter" data-level="1.3.2" data-path="aeiou.html"><a href="#descripci%C3%B3n-del-dataset-final"><i class="fa fa-check"></i><b>1.3.2</b> 2.2 Descripción del Dataset Final</a></li>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="#carga-y-limpieza-de-datos"><i class="fa fa-check"></i><b>1.3.1</b> 2.1 Carga y Limpieza de Datos</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="#descripci%C3%B3n-del-dataset-final"><i class="fa fa-check"></i><b>1.3.2</b> 2.2 Descripción del Dataset Final</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="aeiou.html"><a href="#an%C3%A1lisis-de-valores-perdidos"><i class="fa fa-check"></i><b>1.4</b> 3. Análisis de Valores Perdidos</a>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="#an%C3%A1lisis-de-valores-perdidos"><i class="fa fa-check"></i><b>1.4</b> 3. Análisis de Valores Perdidos</a>
 <ul>
-<li class="chapter" data-level="1.4.1" data-path="aeiou.html"><a href="#patr%C3%B3n-general-de-missingness"><i class="fa fa-check"></i><b>1.4.1</b> 3.1 Patrón General de Missingness</a></li>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="#patr%C3%B3n-general-de-missingness"><i class="fa fa-check"></i><b>1.4.1</b> 3.1 Patrón General de Missingness</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="aeiou.html"><a href="#an%C3%A1lisis-univariado-rendimiento-acad%C3%A9mico-g3"><i class="fa fa-check"></i><b>1.5</b> 4. Análisis Univariado: Rendimiento Académico (G3)</a>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="#an%C3%A1lisis-univariado-rendimiento-acad%C3%A9mico-g3"><i class="fa fa-check"></i><b>1.5</b> 4. Análisis Univariado: Rendimiento Académico (G3)</a>
 <ul>
-<li class="chapter" data-level="1.5.1" data-path="aeiou.html"><a href="#estad%C3%ADsticas-descriptivas-de-g3"><i class="fa fa-check"></i><b>1.5.1</b> 4.1 Estadísticas Descriptivas de G3</a></li>
-<li class="chapter" data-level="1.5.2" data-path="aeiou.html"><a href="#distribuci%C3%B3n-de-calificaciones"><i class="fa fa-check"></i><b>1.5.2</b> 4.2 Distribución de Calificaciones</a></li>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="#estad%C3%ADsticas-descriptivas-de-g3"><i class="fa fa-check"></i><b>1.5.1</b> 4.1 Estadísticas Descriptivas de G3</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="#distribuci%C3%B3n-de-calificaciones"><i class="fa fa-check"></i><b>1.5.2</b> 4.2 Distribución de Calificaciones</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="aeiou.html"><a href="#an%C3%A1lisis-multivariado-panel-exploratorio"><i class="fa fa-check"></i><b>1.6</b> 5. Análisis Multivariado: Panel Exploratorio</a>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="#an%C3%A1lisis-multivariado-panel-exploratorio"><i class="fa fa-check"></i><b>1.6</b> 5. Análisis Multivariado: Panel Exploratorio</a>
 <ul>
-<li class="chapter" data-level="1.6.1" data-path="aeiou.html"><a href="#matriz-de-correlaciones-y-relaciones"><i class="fa fa-check"></i><b>1.6.1</b> 5.1 Matriz de Correlaciones y Relaciones</a></li>
+<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="#matriz-de-correlaciones-y-relaciones"><i class="fa fa-check"></i><b>1.6.1</b> 5.1 Matriz de Correlaciones y Relaciones</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="aeiou.html"><a href="#an%C3%A1lisis-bivariado-detallado"><i class="fa fa-check"></i><b>1.7</b> 6. Análisis Bivariado Detallado</a>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="#an%C3%A1lisis-bivariado-detallado"><i class="fa fa-check"></i><b>1.7</b> 6. Análisis Bivariado Detallado</a>
 <ul>
-<li class="chapter" data-level="1.7.1" data-path="aeiou.html"><a href="#variables-num%C3%A9ricas-vs-rendimiento"><i class="fa fa-check"></i><b>1.7.1</b> 6.1 Variables Numéricas vs Rendimiento</a></li>
-<li class="chapter" data-level="1.7.2" data-path="aeiou.html"><a href="#variables-categ%C3%B3ricas-vs-rendimiento"><i class="fa fa-check"></i><b>1.7.2</b> 6.2 Variables Categóricas vs Rendimiento</a></li>
+<li class="chapter" data-level="1.7.1" data-path="index.html"><a href="#variables-num%C3%A9ricas-vs-rendimiento"><i class="fa fa-check"></i><b>1.7.1</b> 6.1 Variables Numéricas vs Rendimiento</a></li>
+<li class="chapter" data-level="1.7.2" data-path="index.html"><a href="#variables-categ%C3%B3ricas-vs-rendimiento"><i class="fa fa-check"></i><b>1.7.2</b> 6.2 Variables Categóricas vs Rendimiento</a></li>
 </ul></li>
-<li class="chapter" data-level="1.8" data-path="aeiou.html"><a href="#an%C3%A1lisis-de-%C3%A9xitofracaso-acad%C3%A9mico"><i class="fa fa-check"></i><b>1.8</b> 7. Análisis de Éxito/Fracaso Académico</a>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="#an%C3%A1lisis-de-%C3%A9xitofracaso-acad%C3%A9mico"><i class="fa fa-check"></i><b>1.8</b> 7. Análisis de Éxito/Fracaso Académico</a>
 <ul>
-<li class="chapter" data-level="1.8.1" data-path="aeiou.html"><a href="#definici%C3%B3n-de-%C3%A9xito-acad%C3%A9mico"><i class="fa fa-check"></i><b>1.8.1</b> 7.1 Definición de Éxito Académico</a></li>
-<li class="chapter" data-level="1.8.2" data-path="aeiou.html"><a href="#factores-asociados-al-%C3%A9xito"><i class="fa fa-check"></i><b>1.8.2</b> 7.2 Factores Asociados al Éxito</a></li>
+<li class="chapter" data-level="1.8.1" data-path="index.html"><a href="#definici%C3%B3n-de-%C3%A9xito-acad%C3%A9mico"><i class="fa fa-check"></i><b>1.8.1</b> 7.1 Definición de Éxito Académico</a></li>
+<li class="chapter" data-level="1.8.2" data-path="index.html"><a href="#factores-asociados-al-%C3%A9xito"><i class="fa fa-check"></i><b>1.8.2</b> 7.2 Factores Asociados al Éxito</a></li>
 </ul></li>
-<li class="chapter" data-level="1.9" data-path="aeiou.html"><a href="#conclusiones-y-recomendaciones"><i class="fa fa-check"></i><b>1.9</b> 8. Conclusiones y Recomendaciones</a>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="#conclusiones-y-recomendaciones"><i class="fa fa-check"></i><b>1.9</b> 8. Conclusiones y Recomendaciones</a>
 <ul>
-<li class="chapter" data-level="1.9.1" data-path="aeiou.html"><a href="#hallazgos-principales"><i class="fa fa-check"></i><b>1.9.1</b> 8.1 Hallazgos Principales</a></li>
+<li class="chapter" data-level="1.9.1" data-path="index.html"><a href="#hallazgos-principales"><i class="fa fa-check"></i><b>1.9.1</b> 8.1 Hallazgos Principales</a></li>
 </ul></li>
-<li class="chapter" data-level="1.10" data-path="aeiou.html"><a href="#referencias-y-metodolog%C3%ADa"><i class="fa fa-check"></i><b>1.10</b> 9. Referencias y Metodología</a></li>
+<li class="chapter" data-level="1.10" data-path="index.html"><a href="#referencias-y-metodolog%C3%ADa"><i class="fa fa-check"></i><b>1.10</b> 9. Referencias y Metodología</a></li>
 </ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -192,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EDA</a>
           </h1>
         </div>
 
@@ -200,8 +195,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<!--bookdown:title:end-->
-<!--bookdown:title:start-->
+<div id="header">
+<h1 class="title">EDA</h1>
+<p class="author"><em>Tu nombre</em></p>
+<p class="date"><em>2025-08-17</em></p>
+</div>
 <div id="análisis-exploratorio-de-datos-student-performance-uci" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Análisis Exploratorio de Datos: Student Performance UCI<a href="#an%C3%A1lisis-exploratorio-de-datos-student-performance-uci" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><strong>Autor:</strong> Nino Cabrera, Mateo Chang y Dario Quiroga
@@ -999,8 +997,8 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/rstudio/bookdown-demo/edit/master/aeiou.Rmd",
-    "text": "Edit"
+    "link": null,
+    "text": null
   },
   "history": {
     "link": null,
@@ -1010,7 +1008,7 @@ gitbook.start({
     "link": null,
     "text": null
   },
-  "download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+  "download": null,
   "search": {
     "engine": "fuse",
     "options": null
