@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>viipag</title>
-  <meta name="description" content="viipag" />
+  <title>Análisis Exploratorio de Datos: Student Performance UCI</title>
+  <meta name="description" content="Análisis Exploratorio de Datos: Student Performance UCI" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="viipag" />
+  <meta property="og:title" content="Análisis Exploratorio de Datos: Student Performance UCI" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="viipag" />
+  <meta name="twitter:title" content="Análisis Exploratorio de Datos: Student Performance UCI" />
   
   
   
@@ -148,7 +148,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#carga-y-limpieza-de-datos"><i class="fa fa-check"></i><b>1.2.1</b> Carga y Limpieza de Datos</a></li>
 <li class="chapter" data-level="1.2.2" data-path="index.html"><a href="#descripci%C3%B3n-del-dataset-final"><i class="fa fa-check"></i><b>1.2.2</b> Descripción del Dataset Final</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="#patr%C3%B3n-general-de-missingness"><i class="fa fa-check"></i><b>1.3</b> Patrón General de Missingness</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="#an%C3%A1lisis-de-valores-perdidos"><i class="fa fa-check"></i><b>1.3</b> Análisis de Valores Perdidos</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="#patr%C3%B3n-general-de-missingness"><i class="fa fa-check"></i><b>1.3.1</b> Patrón General de Missingness</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="#an%C3%A1lisis-de-valores-perdidos-1"><i class="fa fa-check"></i><b>1.4</b> Análisis de Valores Perdidos</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="#patr%C3%B3n-general-de-missingness-1"><i class="fa fa-check"></i><b>1.4.1</b> Patrón General de Missingness</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="index.html"><a href="#an%C3%A1lisis-univariado-rendimiento-acad%C3%A9mico-g3"><i class="fa fa-check"></i><b>2</b> Análisis Univariado: Rendimiento Académico (G3)</a>
 <ul>
@@ -160,20 +167,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="index.html"><a href="#an%C3%A1lisis-multivariado-panel-exploratorio"><i class="fa fa-check"></i><b>3</b> Análisis Multivariado: Panel Exploratorio</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="análisis-multivariado-panel-exploratorio.html"><a href="análisis-multivariado-panel-exploratorio.html"><i class="fa fa-check"></i><b>3.1</b> Matriz de Correlaciones y Relaciones</a></li>
-<li class="chapter" data-level="3.2" data-path="index.html"><a href="#an%C3%A1lisis-bivariado-detallado"><i class="fa fa-check"></i><b>3.2</b> Análisis Bivariado Detallado</a>
-<ul>
-<li class="chapter" data-level="3.2.1" data-path="index.html"><a href="#variables-num%C3%A9ricas-vs-rendimiento"><i class="fa fa-check"></i><b>3.2.1</b> Variables Numéricas vs Rendimiento</a></li>
-<li class="chapter" data-level="3.2.2" data-path="index.html"><a href="#variables-categ%C3%B3ricas-vs-rendimiento"><i class="fa fa-check"></i><b>3.2.2</b> Variables Categóricas vs Rendimiento</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="index.html"><a href="#an%C3%A1lisis-de-%C3%A9xitofracaso-acad%C3%A9mico"><i class="fa fa-check"></i><b>4</b> Análisis de Éxito/Fracaso Académico</a>
+<li class="chapter" data-level="4" data-path="index.html"><a href="#an%C3%A1lisis-bivariado-detallado"><i class="fa fa-check"></i><b>4</b> Análisis Bivariado Detallado</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="index.html"><a href="#definici%C3%B3n-de-%C3%A9xito-acad%C3%A9mico"><i class="fa fa-check"></i><b>4.1</b> Definición de Éxito Académico</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="index.html"><a href="#factores-asociados-al-%C3%A9xito"><i class="fa fa-check"></i><b>4.1.1</b> Factores Asociados al Éxito</a></li>
+<li class="chapter" data-level="4.0.1" data-path="index.html"><a href="#variables-num%C3%A9ricas-vs-rendimiento"><i class="fa fa-check"></i><b>4.0.1</b> Variables Numéricas vs Rendimiento</a></li>
+<li class="chapter" data-level="4.0.2" data-path="index.html"><a href="#variables-categ%C3%B3ricas-vs-rendimiento"><i class="fa fa-check"></i><b>4.0.2</b> Variables Categóricas vs Rendimiento</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="análisis-de-éxitofracaso-académico.html"><a href="análisis-de-éxitofracaso-académico.html"><i class="fa fa-check"></i><b>4.2</b> Conclusiones y Recomendaciones</a></li>
-<li class="chapter" data-level="4.3" data-path="index.html"><a href="#referencias-y-metodolog%C3%ADa"><i class="fa fa-check"></i><b>4.3</b> Referencias y Metodología</a></li>
+<li class="chapter" data-level="5" data-path="index.html"><a href="#an%C3%A1lisis-de-%C3%A9xitofracaso-acad%C3%A9mico"><i class="fa fa-check"></i><b>5</b> Análisis de Éxito/Fracaso Académico</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="index.html"><a href="#factores-asociados-al-%C3%A9xito"><i class="fa fa-check"></i><b>5.0.1</b> Factores Asociados al Éxito</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="conclusiones-y-recomendaciones.html"><a href="conclusiones-y-recomendaciones.html"><i class="fa fa-check"></i><b>6</b> Conclusiones y Recomendaciones</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="index.html"><a href="#referencias-y-metodolog%C3%ADa"><i class="fa fa-check"></i><b>6.1</b> Referencias y Metodología</a></li>
 </ul></li>
 </ul>
 
@@ -184,7 +190,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">viipag</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Análisis Exploratorio de Datos: Student Performance UCI</a>
           </h1>
         </div>
 
@@ -193,7 +199,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">viipag</h1>
+<h1 class="title">Análisis Exploratorio de Datos: Student Performance UCI</h1>
 <p class="author"><em>Nino Cabrera, Mateo Chang y Dario Quiroga</em></p>
 <p class="date"><em>2025-08-17</em></p>
 </div>
@@ -300,12 +306,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## Variables numéricas ( 16 ): age, medu, fedu, traveltime, studytime, failures, famrel, freetime, goout, dalc, walc, health, absences, g1, g2, g3</code></pre>
 <p><strong>Interpretación:</strong> El dataset combinado contiene 1044 observaciones de estudiantes, con 395 estudiantes de Matemáticas y 649 de Portugués. La estructura incluye 15 variables categóricas y 16 numéricas, proporcionando una vista integral de factores demográficos, socioeconómicos y académicos.</p>
 <hr />
-
-<p>#Análisis de Valores Perdidos</p>
 </div>
 </div>
-<div id="patrón-general-de-missingness" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> Patrón General de Missingness<a href="#patr%C3%B3n-general-de-missingness" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="análisis-de-valores-perdidos" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Análisis de Valores Perdidos<a href="#an%C3%A1lisis-de-valores-perdidos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="patrón-general-de-missingness" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Patrón General de Missingness<a href="#patr%C3%B3n-general-de-missingness" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="index.html#cb15-1" tabindex="-1"></a><span class="co"># Análisis de valores perdidos por variable</span></span>
 <span id="cb15-2"><a href="index.html#cb15-2" tabindex="-1"></a>na_summary_overall <span class="ot">&lt;-</span> df_all <span class="sc">%&gt;%</span></span>
 <span id="cb15-3"><a href="index.html#cb15-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span><span class="fu">mean</span>(<span class="fu">is.na</span>(.))<span class="sc">*</span><span class="dv">100</span>)) <span class="sc">%&gt;%</span></span>
@@ -352,6 +358,14 @@ Figure 1.1: Análisis visual de valores perdidos por materia
 Los datos están completos, sin valores perdidos, lo que indica una excelente calidad en la recolección de información. Esto elimina la necesidad de técnicas de imputación y permite proceder directamente con el análisis.</p>
 <hr />
 
+</div>
+</div>
+<div id="análisis-de-valores-perdidos-1" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Análisis de Valores Perdidos<a href="#an%C3%A1lisis-de-valores-perdidos-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="patrón-general-de-missingness-1" class="section level3 hasAnchor" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> Patrón General de Missingness<a href="#patr%C3%B3n-general-de-missingness-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+
+</div>
 </div>
 </div>
             </section>

@@ -1,0 +1,143 @@
+
+# Análisis Univariado: Rendimiento Académico (G3)
+
+## Estadísticas Descriptivas de G3
+
+```{r setup-pag3, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE, 
+  warning = FALSE, 
+  message = FALSE,
+  fig.width = 10,
+  fig.height = 6,
+  dpi = 300
+)
+
+# Paquetes necesarios para el análisis
+suppressPackageStartupMessages({
+  library(tidyverse)    # Manipulación de datos y visualización
+  library(GGally)       # Matrices de correlación y gráficos paired
+  library(scales)       # Escalas para gráficos
+  library(knitr)        # Tablas formateadas
+  library(DT)           # Tablas interactivas
+})
+
+# Configuración del theme y paleta de colores
+theme_set(theme_minimal(base_size = 12))
+pal <- c("Math" = "#2B8CBE", "Portuguese" = "#E34A33")
+
+# Carga de los datasets originales
+mat <- read.delim("student-mat.csv", sep = ";")
+por <- read.delim("student-por.csv", sep = ";")
+
+# Estandarización de nombres de columnas
+names(mat) <- tolower(gsub("\\.", "_", names(mat)))
+names(por) <- tolower(gsub("\\.", "_", names(por)))
+
+# Definición de tipos de variables
+factor_vars_base  <- c("school","sex","address","famsize","pstatus","mjob","fjob","reason",
+                       "guardian","schoolsup","famsup","paid","activities","nursery",
+                       "higher","internet","romantic")
+
+numeric_vars_base <- c("age","medu","fedu","traveltime","studytime","failures",
+                       "famrel","freetime","goout","dalc","walc","health",
+                       "absences","g1","g2","g3")
+
+# Conversión de tipos de datos
+mat[intersect(factor_vars_base,  names(mat))] <- 
+  lapply(mat[intersect(factor_vars_base,  names(mat))], factor)
+por[intersect(factor_vars_base,  names(por))] <- 
+  lapply(por[intersect(factor_vars_base,  names(por))], factor)
+
+mat[intersect(numeric_vars_base, names(mat))] <- 
+  lapply(mat[intersect(numeric_vars_base, names(mat))], as.numeric)
+por[intersect(numeric_vars_base, names(por))] <- 
+  lapply(por[intersect(numeric_vars_base, names(por))], as.numeric)
+
+# Eliminación de duplicados y variables no utilizadas
+mat <- mat %>% distinct() %>% select(-any_of(c("famsize","nursery")))
+por <- por %>% distinct() %>% select(-any_of(c("famsize","nursery")))
+
+# Combinación de datasets con etiqueta de materia
+mat$subject <- "Math"
+por$subject <- "Portuguese" 
+df_all <- bind_rows(mat, por) %>% relocate(subject)
+
+# Actualización de listas de variables
+factor_vars  <- intersect(factor_vars_base,  names(df_all))
+numeric_vars <- intersect(numeric_vars_base, names(df_all))
+
+
+
+
+
+# Resumen dimensional
+cat("Dimensiones del dataset combinado:", dim(df_all)[1], "observaciones,", dim(df_all)[2], "variables\n")
+cat("Matemáticas:", nrow(mat), "estudiantes\n")
+cat("Portugués:", nrow(por), "estudiantes\n")
+
+# Estructura de variables
+cat("\n=== ESTRUCTURA DE VARIABLES ===\n")
+cat("Variables categóricas (", length(factor_vars), "):", paste(factor_vars, collapse = ", "), "\n")
+cat("Variables numéricas (", length(numeric_vars), "):", paste(numeric_vars, collapse = ", "), "\n")
+```
+
+
+```{r g3-descriptives}
+# Estadísticas descriptivas por materia
+g3_stats <- df_all %>% 
+  group_by(subject) %>%
+  summarise(
+    n = n(),
+    media = mean(g3),
+    desv_std = sd(g3),
+    mediana = median(g3),
+    q1 = quantile(g3, .25),
+    q3 = quantile(g3, .75),
+    minimo = min(g3),
+    maximo = max(g3),
+    .groups = "drop"
+  )
+
+kable(g3_stats, 
+      caption = "Estadísticas descriptivas de G3 por materia",
+      digits = 2,
+      col.names = c("Materia", "N", "Media", "Desv.Std", "Mediana", "Q1", "Q3", "Mín", "Máx"))
+```
+
+### Distribución de Calificaciones
+
+```{r g3-distribution, fig.cap="Distribución de calificaciones finales (G3) por materia"}
+# Comparación directa con boxplot
+boxplot(mat$g3, por$g3,
+        names = c("Math", "Portuguese"),
+        main = "G3 — Comparación entre asignaturas",
+        col = c(pal["Math"], pal["Portuguese"]),
+        ylab = "Calificación Final (G3)")
+
+# Histograma comparativo
+p1 <- ggplot(df_all, aes(g3, fill = subject)) +
+  geom_histogram(bins = 30, position = "identity", alpha = .55) +
+  facet_wrap(~subject, ncol = 1) +
+  scale_fill_manual(values = pal) +
+  labs(title = "Distribución de G3 por asignatura", x = "G3", y = "Frecuencia") +
+  theme(legend.position = "none")
+
+# Gráfico de densidad
+p2 <- ggplot(df_all, aes(g3, color = subject)) +
+  geom_density(linewidth = 1.2) +
+  scale_color_manual(values = pal) +
+  labs(title = "Densidad de G3 por asignatura", x = "G3", y = "Densidad") +
+  theme(legend.position = "bottom")
+
+print(p1)
+print(p2)
+```
+
+**Análisis del Rendimiento por Materia:**
+
+- **Matemáticas:** Media de `r round(g3_stats$media[g3_stats$subject == "Math"], 2)` con desviación estándar de `r round(g3_stats$desv_std[g3_stats$subject == "Math"], 2)`
+- **Portugués:** Media de `r round(g3_stats$media[g3_stats$subject == "Portuguese"], 2)` con desviación estándar de `r round(g3_stats$desv_std[g3_stats$subject == "Portuguese"], 2)`
+
+`r if(g3_stats$media[g3_stats$subject == "Portuguese"] > g3_stats$media[g3_stats$subject == "Math"]) {"**Deducción clave:** Los estudiantes obtienen calificaciones significativamente más altas en Portugués que en Matemáticas, sugiriendo que Matemáticas presenta mayor dificultad académica o que los estudiantes tienen mejor dominio de su lengua materna."} else {"**Deducción clave:** Las calificaciones son similares entre materias, indicando niveles de dificultad comparables."}`
+

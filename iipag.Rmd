@@ -1,0 +1,66 @@
+
+## Análisis de Valores Perdidos
+
+### Patrón General de Missingness
+```{r setup-iipag, include=FALSE}
+suppressPackageStartupMessages({
+  library(dplyr)     # %>%, across, summarise
+  library(tidyr)     # pivot_longer
+  library(forcats)   # fct_reorder
+  library(ggplot2)
+  library(readr)
+  library(knitr)
+})
+
+# Cargar datos y crear df_all (cada capítulo corre en su propia sesión)
+mat <- readr::read_csv("student-mat.csv", show_col_types = FALSE)
+por <- readr::read_csv("student-por.csv", show_col_types = FALSE)
+mat$subject <- "Matemáticas"
+por$subject <- "Portugués"
+df_all <- dplyr::bind_rows(mat, por)
+
+
+# Análisis de valores perdidos por variable
+na_summary_overall <- df_all %>%
+  summarise(across(everything(), ~mean(is.na(.))*100)) %>%
+  pivot_longer(everything(), names_to = "variable", values_to = "pct_na_overall")
+
+# Análisis por materia
+na_summary_by_subj <- df_all %>%
+  group_by(subject) %>%
+  summarise(across(everything(), ~mean(is.na(.))*100)) %>%
+  pivot_longer(-subject, names_to = "variable", values_to = "pct_na") %>%
+  left_join(na_summary_overall, by = "variable") %>%
+  mutate(variable = fct_reorder(variable, pct_na_overall, .desc = TRUE))
+
+# Tabla resumen de missingness
+na_table <- na_summary_overall %>%
+  filter(pct_na_overall > 0) %>%
+  arrange(desc(pct_na_overall))
+
+if(nrow(na_table) > 0) {
+  kable(na_table, 
+        caption = "Variables con valores perdidos",
+        col.names = c("Variable", "% Valores Perdidos"),
+        digits = 2)
+} else {
+  cat("No se detectaron valores perdidos en el dataset")
+}
+```
+
+```{r missing-visualization, fig.cap="Análisis visual de valores perdidos por materia"}
+# Visualización de valores perdidos
+ggplot(na_summary_by_subj, aes(variable, pct_na, fill = subject)) +
+  geom_col(position = position_dodge(width = .8), width = .75) +
+  coord_flip() +
+  scale_y_continuous(labels = function(x) paste0(x, "%")) +
+  scale_fill_manual(values = pal) +
+  labs(title = "% de valores perdidos por variable y asignatura", 
+       x = NULL, y = "% NA", fill = "Asignatura") +
+  theme(legend.position = "bottom")
+```
+
+**Conclusión sobre Missingness:** 
+`r if(max(na_summary_overall$pct_na_overall) == 0) {"Los datos están completos, sin valores perdidos, lo que indica una excelente calidad en la recolección de información. Esto elimina la necesidad de técnicas de imputación y permite proceder directamente con el análisis."} else {paste("Se detectaron valores perdidos en", sum(na_summary_overall$pct_na_overall > 0), "variables, con un máximo de", round(max(na_summary_overall$pct_na_overall), 1), "% de missingness.")}`
+
+---

@@ -1,0 +1,265 @@
+
+
+# Análisis Bivariado Detallado
+
+## Variables Numéricas vs Rendimiento
+```{r setup-pag3, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE, 
+  warning = FALSE, 
+  message = FALSE,
+  fig.width = 10,
+  fig.height = 6,
+  dpi = 300
+)
+
+# Paquetes necesarios para el análisis
+suppressPackageStartupMessages({
+  library(tidyverse)    # Manipulación de datos y visualización
+  library(GGally)       # Matrices de correlación y gráficos paired
+  library(scales)       # Escalas para gráficos
+  library(knitr)        # Tablas formateadas
+  library(DT)           # Tablas interactivas
+})
+
+# Configuración del theme y paleta de colores
+theme_set(theme_minimal(base_size = 12))
+pal <- c("Math" = "#2B8CBE", "Portuguese" = "#E34A33")
+
+# Carga de los datasets originales
+mat <- read.delim("student-mat.csv", sep = ";")
+por <- read.delim("student-por.csv", sep = ";")
+
+# Estandarización de nombres de columnas
+names(mat) <- tolower(gsub("\\.", "_", names(mat)))
+names(por) <- tolower(gsub("\\.", "_", names(por)))
+
+# Definición de tipos de variables
+factor_vars_base  <- c("school","sex","address","famsize","pstatus","mjob","fjob","reason",
+                       "guardian","schoolsup","famsup","paid","activities","nursery",
+                       "higher","internet","romantic")
+
+numeric_vars_base <- c("age","medu","fedu","traveltime","studytime","failures",
+                       "famrel","freetime","goout","dalc","walc","health",
+                       "absences","g1","g2","g3")
+
+# Conversión de tipos de datos
+mat[intersect(factor_vars_base,  names(mat))] <- 
+  lapply(mat[intersect(factor_vars_base,  names(mat))], factor)
+por[intersect(factor_vars_base,  names(por))] <- 
+  lapply(por[intersect(factor_vars_base,  names(por))], factor)
+
+mat[intersect(numeric_vars_base, names(mat))] <- 
+  lapply(mat[intersect(numeric_vars_base, names(mat))], as.numeric)
+por[intersect(numeric_vars_base, names(por))] <- 
+  lapply(por[intersect(numeric_vars_base, names(por))], as.numeric)
+
+# Eliminación de duplicados y variables no utilizadas
+mat <- mat %>% distinct() %>% select(-any_of(c("famsize","nursery")))
+por <- por %>% distinct() %>% select(-any_of(c("famsize","nursery")))
+
+# Combinación de datasets con etiqueta de materia
+mat$subject <- "Math"
+por$subject <- "Portuguese" 
+df_all <- bind_rows(mat, por) %>% relocate(subject)
+
+# Actualización de listas de variables
+factor_vars  <- intersect(factor_vars_base,  names(df_all))
+numeric_vars <- intersect(numeric_vars_base, names(df_all))
+
+
+
+
+
+# Resumen dimensional
+cat("Dimensiones del dataset combinado:", dim(df_all)[1], "observaciones,", dim(df_all)[2], "variables\n")
+cat("Matemáticas:", nrow(mat), "estudiantes\n")
+cat("Portugués:", nrow(por), "estudiantes\n")
+
+# Estructura de variables
+cat("\n=== ESTRUCTURA DE VARIABLES ===\n")
+cat("Variables categóricas (", length(factor_vars), "):", paste(factor_vars, collapse = ", "), "\n")
+cat("Variables numéricas (", length(numeric_vars), "):", paste(numeric_vars, collapse = ", "), "\n")
+
+
+# Estadísticas descriptivas por materia
+g3_stats <- df_all %>% 
+  group_by(subject) %>%
+  summarise(
+    n = n(),
+    media = mean(g3),
+    desv_std = sd(g3),
+    mediana = median(g3),
+    q1 = quantile(g3, .25),
+    q3 = quantile(g3, .75),
+    minimo = min(g3),
+    maximo = max(g3),
+    .groups = "drop"
+  )
+
+kable(g3_stats, 
+      caption = "Estadísticas descriptivas de G3 por materia",
+      digits = 2,
+      col.names = c("Materia", "N", "Media", "Desv.Std", "Mediana", "Q1", "Q3", "Mín", "Máx"))
+
+# Comparación directa con boxplot
+boxplot(mat$g3, por$g3,
+        names = c("Math", "Portuguese"),
+        main = "G3 — Comparación entre asignaturas",
+        col = c(pal["Math"], pal["Portuguese"]),
+        ylab = "Calificación Final (G3)")
+
+# Histograma comparativo
+p1 <- ggplot(df_all, aes(g3, fill = subject)) +
+  geom_histogram(bins = 30, position = "identity", alpha = .55) +
+  facet_wrap(~subject, ncol = 1) +
+  scale_fill_manual(values = pal) +
+  labs(title = "Distribución de G3 por asignatura", x = "G3", y = "Frecuencia") +
+  theme(legend.position = "none")
+
+# Gráfico de densidad
+p2 <- ggplot(df_all, aes(g3, color = subject)) +
+  geom_density(linewidth = 1.2) +
+  scale_color_manual(values = pal) +
+  labs(title = "Densidad de G3 por asignatura", x = "G3", y = "Densidad") +
+  theme(legend.position = "bottom")
+
+print(p1)
+print(p2)
+
+# Variables clave para análisis
+nums_key <- intersect(c("g3","g2","g1","studytime","failures","absences","age"), names(df_all))
+vars_panel <- unique(c(nums_key, intersect("sex", names(df_all))))
+df_small <- df_all[, unique(c(vars_panel, "subject"))]
+
+# Panel multivariado con GGally
+p_mix <- ggpairs(
+  df_small,
+  mapping = ggplot2::aes(color = subject, alpha = 0.55),
+  upper = list(
+    continuous = wrap("cor", size = 3),    # Correlaciones en triángulo superior
+    combo      = "box_no_facet",           # Boxplots para cat~num
+    discrete   = "blank"                   # Espacio en blanco para cat~cat
+  ),
+  lower = list(
+    continuous = wrap("points", alpha = .35, size = .6),  # Scatter plots
+    combo      = "facethist",              # Histogramas por facetas
+    discrete   = "count"                   # Conteos para cat~cat
+  ),
+  diag  = list(continuous = "densityDiag"), # Densidades en diagonal
+  title = "Exploración compacta — Variables clave (coloreado por asignatura)"
+) + theme(legend.position = "bottom")
+
+print(p_mix)
+
+```
+
+
+```{r numeric-bivariate, fig.height=8, fig.cap="Relaciones entre variables numéricas y rendimiento final"}
+# Variables numéricas clave excluyendo G3
+numeric_predictors <- setdiff(numeric_vars, "g3")
+
+# Análisis de correlaciones
+correlations <- df_all %>%
+  select(subject, all_of(numeric_predictors), g3) %>%
+  group_by(subject) %>%
+  summarise(
+    across(all_of(numeric_predictors), ~cor(., g3, use = "complete.obs")),
+    .groups = "drop"
+  )
+
+# Tabla de correlaciones
+cor_table <- correlations %>%
+  pivot_longer(-subject, names_to = "variable", values_to = "correlation") %>%
+  pivot_wider(names_from = subject, values_from = correlation) %>%
+  arrange(desc(abs(Math + Portuguese)))
+
+kable(cor_table, 
+      caption = "Correlaciones entre variables numéricas y G3 por materia",
+      digits = 3,
+      col.names = c("Variable", "Matemáticas", "Portugués"))
+```
+
+```{r scatter-plots, fig.height=12, fig.cap="Relaciones de dispersión entre predictores numéricos y G3"}
+# Gráficos de dispersión para variables más correlacionadas
+top_vars <- cor_table$variable[1:6]  # Top 6 variables más correlacionadas
+
+plots_list <- map(top_vars, ~{
+  ggplot(df_all, aes(.data[[.x]], g3, color = subject)) +
+    geom_point(alpha = .4, size = 1) +
+    geom_smooth(method = "lm", se = FALSE, linewidth = 1) +
+    scale_color_manual(values = pal) +
+    labs(title = paste("G3 vs", .x), x = .x, y = "G3") +
+    theme(legend.position = "none")
+})
+
+# Combinar gráficos
+do.call(gridExtra::grid.arrange, c(plots_list, ncol = 2))
+```
+
+**Deducciones de las Relaciones Numéricas:**
+
+1. **G2 y G1** muestran las correlaciones más fuertes con G3 (`r round(max(abs(cor_table$Math[1:2])), 3)`), confirmando la progresión académica consistente.
+
+2. **Failures** presenta correlación negativa fuerte, siendo un indicador crítico de riesgo académico.
+
+3. **Study Time** muestra correlaciones positivas moderadas, validando la importancia del tiempo de estudio.
+
+### Variables Categóricas vs Rendimiento
+
+```{r categorical-analysis, fig.height=10, fig.cap="Análisis de rendimiento por variables categóricas clave"}
+# Variables categóricas clave
+cats_key <- intersect(c("sex","address","schoolsup","higher","internet"), names(df_all))
+
+cat_stats <- purrr::map_dfr(cats_key, function(var){
+  df_all %>%
+    group_by(subject, !!sym(var)) %>%
+    summarise(
+      n = n(),
+      mean_g3 = mean(g3),
+      sd_g3 = sd(g3),
+      .groups = "drop"
+    ) %>%
+    mutate(
+      variable = var,
+      category = as.character(!!sym(var))
+    ) %>%
+    # nos quedamos solo con las 6 columnas que queremos
+    select(subject, variable, category, n, mean_g3, sd_g3)
+})
+
+knitr::kable(
+  head(cat_stats, 10),
+  caption = "Estadísticas de G3 por categorías (primeras 10 filas)",
+  digits = 2,
+  col.names = c("Materia", "Variable", "Categoría", "N", "Media G3", "SD G3")
+)
+
+```
+
+```{r categorical-boxplots, fig.height=12, fig.cap="Distribución de G3 por variables categóricas clave"}
+# Boxplots para variables categóricas clave
+plots_cat <- map(cats_key, ~{
+  ggplot(df_all, aes(.data[[.x]], g3, fill = subject)) +
+    geom_boxplot(outlier.alpha = .2, width = .6, position = position_dodge(width = .75)) +
+    geom_point(aes(color = subject),
+               position = position_jitterdodge(jitter.width = .15, dodge.width = .75),
+               size = .6, alpha = .25, show.legend = FALSE) +
+    scale_fill_manual(values = pal) + 
+    scale_color_manual(values = pal) +
+    labs(title = paste("G3 por", .x), x = .x, y = "G3") +
+    theme(legend.position = "bottom")
+})
+
+do.call(gridExtra::grid.arrange, c(plots_cat, ncol = 2))
+```
+
+**Insights de Variables Categóricas:**
+
+1. **Higher Education Aspiration:** Los estudiantes que aspiran a educación superior muestran rendimiento significativamente mayor.
+
+2. **Internet Access:** El acceso a internet se asocia con mejores calificaciones, sugiriendo ventajas en recursos educativos.
+
+3. **School Support:** El apoyo escolar adicional muestra patrones complejos que requieren análisis más profundo.
+
+---

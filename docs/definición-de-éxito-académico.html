@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Análisis de Éxito/Fracaso Académico | Análisis Exploratorio de Datos: Student Performance UCI</title>
-  <meta name="description" content="Chapter 5 Análisis de Éxito/Fracaso Académico | Análisis Exploratorio de Datos: Student Performance UCI" />
+  <title>Chapter 6 Definición de Éxito Académico | Análisis Exploratorio de Datos: Student Performance UCI</title>
+  <meta name="description" content="Chapter 6 Definición de Éxito Académico | Análisis Exploratorio de Datos: Student Performance UCI" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Análisis de Éxito/Fracaso Académico | Análisis Exploratorio de Datos: Student Performance UCI" />
+  <meta property="og:title" content="Chapter 6 Definición de Éxito Académico | Análisis Exploratorio de Datos: Student Performance UCI" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Análisis de Éxito/Fracaso Académico | Análisis Exploratorio de Datos: Student Performance UCI" />
+  <meta name="twitter:title" content="Chapter 6 Definición de Éxito Académico | Análisis Exploratorio de Datos: Student Performance UCI" />
   
   
   
@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="análisis-bivariado-detallado.html"/>
+<link rel="prev" href="análisis-de-éxitofracaso-académico.html"/>
 <link rel="next" href="conclusiones-y-recomendaciones.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -175,16 +175,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1.1" data-path="vipag.html"><a href="#variables-categ%C3%B3ricas-vs-rendimiento"><i class="fa fa-check"></i><b>4.1.1</b> Variables Categóricas vs Rendimiento</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="vipag.html"><a href="#an%C3%A1lisis-de-%C3%A9xitofracaso-acad%C3%A9mico"><i class="fa fa-check"></i><b>5</b> Análisis de Éxito/Fracaso Académico</a>
+<li class="chapter" data-level="5" data-path="vipag.html"><a href="#an%C3%A1lisis-de-%C3%A9xitofracaso-acad%C3%A9mico"><i class="fa fa-check"></i><b>5</b> Análisis de Éxito/Fracaso Académico</a></li>
+<li class="chapter" data-level="6" data-path="vipag.html"><a href="#definici%C3%B3n-de-%C3%A9xito-acad%C3%A9mico"><i class="fa fa-check"></i><b>6</b> Definición de Éxito Académico</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="vipag.html"><a href="#definici%C3%B3n-de-%C3%A9xito-acad%C3%A9mico"><i class="fa fa-check"></i><b>5.1</b> Definición de Éxito Académico</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="vipag.html"><a href="#factores-asociados-al-%C3%A9xito"><i class="fa fa-check"></i><b>5.1.1</b> Factores Asociados al Éxito</a></li>
+<li class="chapter" data-level="6.0.1" data-path="vipag.html"><a href="#factores-asociados-al-%C3%A9xito"><i class="fa fa-check"></i><b>6.0.1</b> Factores Asociados al Éxito</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="conclusiones-y-recomendaciones.html"><a href="conclusiones-y-recomendaciones.html"><i class="fa fa-check"></i><b>6</b> Conclusiones y Recomendaciones</a>
+<li class="chapter" data-level="7" data-path="conclusiones-y-recomendaciones.html"><a href="conclusiones-y-recomendaciones.html"><i class="fa fa-check"></i><b>7</b> Conclusiones y Recomendaciones</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="vipag.html"><a href="#referencias-y-metodolog%C3%ADa"><i class="fa fa-check"></i><b>6.1</b> Referencias y Metodología</a></li>
+<li class="chapter" data-level="7.1" data-path="vipag.html"><a href="#referencias-y-metodolog%C3%ADa"><i class="fa fa-check"></i><b>7.1</b> Referencias y Metodología</a></li>
 </ul></li>
 </ul>
 
@@ -203,48 +201,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="análisis-de-éxitofracaso-académico" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Análisis de Éxito/Fracaso Académico<a href="#an%C3%A1lisis-de-%C3%A9xitofracaso-acad%C3%A9mico" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="definición-de-éxito-académico" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Definición de Éxito Académico<a href="#definici%C3%B3n-de-%C3%A9xito-acad%C3%A9mico" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="factores-asociados-al-éxito" class="section level3 hasAnchor" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> Factores Asociados al Éxito<a href="#factores-asociados-al-%C3%A9xito" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="análisis-de-éxitofracaso-académico.html#cb1-1" tabindex="-1"></a><span class="co"># Análisis de proporciones de éxito por categorías</span></span>
-<span id="cb1-2"><a href="análisis-de-éxitofracaso-académico.html#cb1-2" tabindex="-1"></a>success_plots <span class="ot">&lt;-</span> <span class="fu">map</span>(cats_key, <span class="sc">~</span>{</span>
-<span id="cb1-3"><a href="análisis-de-éxitofracaso-académico.html#cb1-3" tabindex="-1"></a>  <span class="fu">ggplot</span>(df_bin, <span class="fu">aes</span>(.data[[.x]], <span class="at">fill =</span> status)) <span class="sc">+</span></span>
-<span id="cb1-4"><a href="análisis-de-éxitofracaso-académico.html#cb1-4" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;fill&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-5"><a href="análisis-de-éxitofracaso-académico.html#cb1-5" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>subject) <span class="sc">+</span></span>
-<span id="cb1-6"><a href="análisis-de-éxitofracaso-académico.html#cb1-6" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Reprobado&quot;</span> <span class="ot">=</span> <span class="st">&quot;#D9D9D9&quot;</span>, <span class="st">&quot;Aprobado&quot;</span> <span class="ot">=</span> <span class="st">&quot;#31A354&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb1-7"><a href="análisis-de-éxitofracaso-académico.html#cb1-7" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent) <span class="sc">+</span></span>
-<span id="cb1-8"><a href="análisis-de-éxitofracaso-académico.html#cb1-8" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Proporción de aprobados por&quot;</span>, .x), </span>
-<span id="cb1-9"><a href="análisis-de-éxitofracaso-académico.html#cb1-9" tabindex="-1"></a>         <span class="at">x =</span> .x, <span class="at">y =</span> <span class="st">&quot;Proporción&quot;</span>) <span class="sc">+</span></span>
-<span id="cb1-10"><a href="análisis-de-éxitofracaso-académico.html#cb1-10" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span>
-<span id="cb1-11"><a href="análisis-de-éxitofracaso-académico.html#cb1-11" tabindex="-1"></a>})</span>
-<span id="cb1-12"><a href="análisis-de-éxitofracaso-académico.html#cb1-12" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="análisis-de-éxitofracaso-académico.html#cb1-13" tabindex="-1"></a><span class="fu">do.call</span>(gridExtra<span class="sc">::</span>grid.arrange, <span class="fu">c</span>(success_plots[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="at">ncol =</span> <span class="dv">2</span>))</span></code></pre></div>
+<div id="definición-de-éxito-académico" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Definición de Éxito Académico<a href="#definici%C3%B3n-de-%C3%A9xito-acad%C3%A9mico" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="factores-asociados-al-éxito" class="section level3 hasAnchor" number="6.0.1">
+<h3><span class="header-section-number">6.0.1</span> Factores Asociados al Éxito<a href="#factores-asociados-al-%C3%A9xito" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="definición-de-éxito-académico.html#cb1-1" tabindex="-1"></a><span class="co"># Análisis de proporciones de éxito por categorías</span></span>
+<span id="cb1-2"><a href="definición-de-éxito-académico.html#cb1-2" tabindex="-1"></a>success_plots <span class="ot">&lt;-</span> <span class="fu">map</span>(cats_key, <span class="sc">~</span>{</span>
+<span id="cb1-3"><a href="definición-de-éxito-académico.html#cb1-3" tabindex="-1"></a>  <span class="fu">ggplot</span>(df_bin, <span class="fu">aes</span>(.data[[.x]], <span class="at">fill =</span> status)) <span class="sc">+</span></span>
+<span id="cb1-4"><a href="definición-de-éxito-académico.html#cb1-4" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;fill&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-5"><a href="definición-de-éxito-académico.html#cb1-5" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>subject) <span class="sc">+</span></span>
+<span id="cb1-6"><a href="definición-de-éxito-académico.html#cb1-6" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Reprobado&quot;</span> <span class="ot">=</span> <span class="st">&quot;#D9D9D9&quot;</span>, <span class="st">&quot;Aprobado&quot;</span> <span class="ot">=</span> <span class="st">&quot;#31A354&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb1-7"><a href="definición-de-éxito-académico.html#cb1-7" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent) <span class="sc">+</span></span>
+<span id="cb1-8"><a href="definición-de-éxito-académico.html#cb1-8" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Proporción de aprobados por&quot;</span>, .x), </span>
+<span id="cb1-9"><a href="definición-de-éxito-académico.html#cb1-9" tabindex="-1"></a>         <span class="at">x =</span> .x, <span class="at">y =</span> <span class="st">&quot;Proporción&quot;</span>) <span class="sc">+</span></span>
+<span id="cb1-10"><a href="definición-de-éxito-académico.html#cb1-10" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span>
+<span id="cb1-11"><a href="definición-de-éxito-académico.html#cb1-11" tabindex="-1"></a>})</span>
+<span id="cb1-12"><a href="definición-de-éxito-académico.html#cb1-12" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="definición-de-éxito-académico.html#cb1-13" tabindex="-1"></a><span class="fu">do.call</span>(gridExtra<span class="sc">::</span>grid.arrange, <span class="fu">c</span>(success_plots[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="at">ncol =</span> <span class="dv">2</span>))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:success-factors"></span>
 <img src="bookdown-demo_files/figure-html/success-factors-1.png" alt="Factores asociados al éxito académico" width="3000" />
 <p class="caption">
-Figure 5.1: Factores asociados al éxito académico
+Figure 6.1: Factores asociados al éxito académico
 </p>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="análisis-de-éxitofracaso-académico.html#cb2-1" tabindex="-1"></a><span class="co"># Análisis de variables numéricas por estado</span></span>
-<span id="cb2-2"><a href="análisis-de-éxitofracaso-académico.html#cb2-2" tabindex="-1"></a>nums_success <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(nums_key, <span class="st">&quot;g3&quot;</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]  <span class="co"># Top 4 variables</span></span>
-<span id="cb2-3"><a href="análisis-de-éxitofracaso-académico.html#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="análisis-de-éxitofracaso-académico.html#cb2-4" tabindex="-1"></a>numeric_success_plots <span class="ot">&lt;-</span> <span class="fu">map</span>(nums_success, <span class="sc">~</span>{</span>
-<span id="cb2-5"><a href="análisis-de-éxitofracaso-académico.html#cb2-5" tabindex="-1"></a>  <span class="fu">ggplot</span>(df_bin, <span class="fu">aes</span>(status, .data[[.x]], <span class="at">fill =</span> status)) <span class="sc">+</span></span>
-<span id="cb2-6"><a href="análisis-de-éxitofracaso-académico.html#cb2-6" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">outlier.alpha =</span> .<span class="dv">25</span>, <span class="at">width =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb2-7"><a href="análisis-de-éxitofracaso-académico.html#cb2-7" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>subject, <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>) <span class="sc">+</span></span>
-<span id="cb2-8"><a href="análisis-de-éxitofracaso-académico.html#cb2-8" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Reprobado&quot;</span> <span class="ot">=</span> <span class="st">&quot;#FDD0A2&quot;</span>, <span class="st">&quot;Aprobado&quot;</span> <span class="ot">=</span> <span class="st">&quot;#9ECAE1&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb2-9"><a href="análisis-de-éxitofracaso-académico.html#cb2-9" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
-<span id="cb2-10"><a href="análisis-de-éxitofracaso-académico.html#cb2-10" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(.x, <span class="st">&quot;por estado académico&quot;</span>), <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> .x)</span>
-<span id="cb2-11"><a href="análisis-de-éxitofracaso-académico.html#cb2-11" tabindex="-1"></a>})</span>
-<span id="cb2-12"><a href="análisis-de-éxitofracaso-académico.html#cb2-12" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="análisis-de-éxitofracaso-académico.html#cb2-13" tabindex="-1"></a><span class="fu">do.call</span>(gridExtra<span class="sc">::</span>grid.arrange, <span class="fu">c</span>(numeric_success_plots, <span class="at">ncol =</span> <span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="definición-de-éxito-académico.html#cb2-1" tabindex="-1"></a><span class="co"># Análisis de variables numéricas por estado</span></span>
+<span id="cb2-2"><a href="definición-de-éxito-académico.html#cb2-2" tabindex="-1"></a>nums_success <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(nums_key, <span class="st">&quot;g3&quot;</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]  <span class="co"># Top 4 variables</span></span>
+<span id="cb2-3"><a href="definición-de-éxito-académico.html#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="definición-de-éxito-académico.html#cb2-4" tabindex="-1"></a>numeric_success_plots <span class="ot">&lt;-</span> <span class="fu">map</span>(nums_success, <span class="sc">~</span>{</span>
+<span id="cb2-5"><a href="definición-de-éxito-académico.html#cb2-5" tabindex="-1"></a>  <span class="fu">ggplot</span>(df_bin, <span class="fu">aes</span>(status, .data[[.x]], <span class="at">fill =</span> status)) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="definición-de-éxito-académico.html#cb2-6" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">outlier.alpha =</span> .<span class="dv">25</span>, <span class="at">width =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="definición-de-éxito-académico.html#cb2-7" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>subject, <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-8"><a href="definición-de-éxito-académico.html#cb2-8" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Reprobado&quot;</span> <span class="ot">=</span> <span class="st">&quot;#FDD0A2&quot;</span>, <span class="st">&quot;Aprobado&quot;</span> <span class="ot">=</span> <span class="st">&quot;#9ECAE1&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb2-9"><a href="definición-de-éxito-académico.html#cb2-9" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="definición-de-éxito-académico.html#cb2-10" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(.x, <span class="st">&quot;por estado académico&quot;</span>), <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> .x)</span>
+<span id="cb2-11"><a href="definición-de-éxito-académico.html#cb2-11" tabindex="-1"></a>})</span>
+<span id="cb2-12"><a href="definición-de-éxito-académico.html#cb2-12" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="definición-de-éxito-académico.html#cb2-13" tabindex="-1"></a><span class="fu">do.call</span>(gridExtra<span class="sc">::</span>grid.arrange, <span class="fu">c</span>(numeric_success_plots, <span class="at">ncol =</span> <span class="dv">2</span>))</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:numeric-success"></span>
 <img src="bookdown-demo_files/figure-html/numeric-success-1.png" alt="Distribución de variables numéricas por estado académico" width="3000" />
 <p class="caption">
-Figure 5.2: Distribución de variables numéricas por estado académico
+Figure 6.2: Distribución de variables numéricas por estado académico
 </p>
 </div>
 <p><strong>Factores Críticos de Éxito Identificados:</strong></p>
@@ -257,13 +253,12 @@ Figure 5.2: Distribución de variables numéricas por estado académico
 
 </div>
 </div>
-</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="análisis-bivariado-detallado.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="análisis-de-éxitofracaso-académico.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="conclusiones-y-recomendaciones.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
