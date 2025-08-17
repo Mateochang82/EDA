@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Análisis de Éxito/Fracaso Académico | viipag</title>
+  <meta name="description" content="Chapter 4 Análisis de Éxito/Fracaso Académico | viipag" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Análisis de Éxito/Fracaso Académico | viipag" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Análisis de Éxito/Fracaso Académico | viipag" />
+  
+  
+  
+
+<meta name="author" content="Nino Cabrera, Mateo Chang y Dario Quiroga" />
+
+
+<meta name="date" content="2025-08-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="análisis-multivariado-panel-exploratorio.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Resumen del Analisis</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="vipag.html"><a href="#introducci%C3%B3n-y-objetivos"><i class="fa fa-check"></i><b>1.1</b> Introducción y Objetivos</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#contexto-del-dataset"><i class="fa fa-check"></i><b>1.1.1</b> Contexto del Dataset</a></li>
+<li class="chapter" data-level="1.1.2" data-path="vipag.html"><a href="#objetivos-del-an%C3%A1lisis"><i class="fa fa-check"></i><b>1.1.2</b> Objetivos del Análisis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="vipag.html"><a href="#preparaci%C3%B3n-y-estructura-de-los-datos"><i class="fa fa-check"></i><b>1.2</b> Preparación y Estructura de los Datos</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#carga-y-limpieza-de-datos"><i class="fa fa-check"></i><b>1.2.1</b> Carga y Limpieza de Datos</a></li>
+<li class="chapter" data-level="1.2.2" data-path="vipag.html"><a href="#descripci%C3%B3n-del-dataset-final"><i class="fa fa-check"></i><b>1.2.2</b> Descripción del Dataset Final</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="vipag.html"><a href="#patr%C3%B3n-general-de-missingness"><i class="fa fa-check"></i><b>1.3</b> Patrón General de Missingness</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="vipag.html"><a href="#an%C3%A1lisis-univariado-rendimiento-acad%C3%A9mico-g3"><i class="fa fa-check"></i><b>2</b> Análisis Univariado: Rendimiento Académico (G3)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="vipag.html"><a href="#estad%C3%ADsticas-descriptivas-de-g3"><i class="fa fa-check"></i><b>2.1</b> Estadísticas Descriptivas de G3</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="vipag.html"><a href="#distribuci%C3%B3n-de-calificaciones"><i class="fa fa-check"></i><b>2.1.1</b> Distribución de Calificaciones</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="vipag.html"><a href="#an%C3%A1lisis-multivariado-panel-exploratorio"><i class="fa fa-check"></i><b>3</b> Análisis Multivariado: Panel Exploratorio</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="análisis-multivariado-panel-exploratorio.html"><a href="análisis-multivariado-panel-exploratorio.html"><i class="fa fa-check"></i><b>3.1</b> Matriz de Correlaciones y Relaciones</a></li>
+<li class="chapter" data-level="3.2" data-path="vipag.html"><a href="#an%C3%A1lisis-bivariado-detallado"><i class="fa fa-check"></i><b>3.2</b> Análisis Bivariado Detallado</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="vipag.html"><a href="#variables-num%C3%A9ricas-vs-rendimiento"><i class="fa fa-check"></i><b>3.2.1</b> Variables Numéricas vs Rendimiento</a></li>
+<li class="chapter" data-level="3.2.2" data-path="vipag.html"><a href="#variables-categ%C3%B3ricas-vs-rendimiento"><i class="fa fa-check"></i><b>3.2.2</b> Variables Categóricas vs Rendimiento</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="vipag.html"><a href="#an%C3%A1lisis-de-%C3%A9xitofracaso-acad%C3%A9mico"><i class="fa fa-check"></i><b>4</b> Análisis de Éxito/Fracaso Académico</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="vipag.html"><a href="#definici%C3%B3n-de-%C3%A9xito-acad%C3%A9mico"><i class="fa fa-check"></i><b>4.1</b> Definición de Éxito Académico</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="vipag.html"><a href="#factores-asociados-al-%C3%A9xito"><i class="fa fa-check"></i><b>4.1.1</b> Factores Asociados al Éxito</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="análisis-de-éxitofracaso-académico.html"><a href="análisis-de-éxitofracaso-académico.html"><i class="fa fa-check"></i><b>4.2</b> Conclusiones y Recomendaciones</a></li>
+<li class="chapter" data-level="4.3" data-path="vipag.html"><a href="#referencias-y-metodolog%C3%ADa"><i class="fa fa-check"></i><b>4.3</b> Referencias y Metodología</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">viipag</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="análisis-de-éxitofracaso-académico" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Análisis de Éxito/Fracaso Académico<a href="#an%C3%A1lisis-de-%C3%A9xitofracaso-acad%C3%A9mico" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="definición-de-éxito-académico" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Definición de Éxito Académico<a href="#definici%C3%B3n-de-%C3%A9xito-acad%C3%A9mico" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="análisis-de-éxitofracaso-académico.html#cb27-1" tabindex="-1"></a><span class="co"># Creación de variable binaria (aprobado/reprobado)</span></span>
+<span id="cb27-2"><a href="análisis-de-éxitofracaso-académico.html#cb27-2" tabindex="-1"></a>df_bin <span class="ot">&lt;-</span> df_all <span class="sc">%&gt;%</span></span>
+<span id="cb27-3"><a href="análisis-de-éxitofracaso-académico.html#cb27-3" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb27-4"><a href="análisis-de-éxitofracaso-académico.html#cb27-4" tabindex="-1"></a>    <span class="at">status =</span> <span class="fu">factor</span>(</span>
+<span id="cb27-5"><a href="análisis-de-éxitofracaso-académico.html#cb27-5" tabindex="-1"></a>      <span class="fu">if_else</span>(g3 <span class="sc">&gt;=</span> <span class="dv">10</span>, <span class="st">&quot;Aprobado&quot;</span>, <span class="st">&quot;Reprobado&quot;</span>),</span>
+<span id="cb27-6"><a href="análisis-de-éxitofracaso-académico.html#cb27-6" tabindex="-1"></a>      <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Reprobado&quot;</span>, <span class="st">&quot;Aprobado&quot;</span>)</span>
+<span id="cb27-7"><a href="análisis-de-éxitofracaso-académico.html#cb27-7" tabindex="-1"></a>    )</span>
+<span id="cb27-8"><a href="análisis-de-éxitofracaso-académico.html#cb27-8" tabindex="-1"></a>  )</span>
+<span id="cb27-9"><a href="análisis-de-éxitofracaso-académico.html#cb27-9" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="análisis-de-éxitofracaso-académico.html#cb27-10" tabindex="-1"></a><span class="co"># Estadísticas de aprobación</span></span>
+<span id="cb27-11"><a href="análisis-de-éxitofracaso-académico.html#cb27-11" tabindex="-1"></a>pass_stats <span class="ot">&lt;-</span> df_bin <span class="sc">%&gt;%</span></span>
+<span id="cb27-12"><a href="análisis-de-éxitofracaso-académico.html#cb27-12" tabindex="-1"></a>  <span class="fu">group_by</span>(subject) <span class="sc">%&gt;%</span></span>
+<span id="cb27-13"><a href="análisis-de-éxitofracaso-académico.html#cb27-13" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb27-14"><a href="análisis-de-éxitofracaso-académico.html#cb27-14" tabindex="-1"></a>    <span class="at">total =</span> <span class="fu">n</span>(),</span>
+<span id="cb27-15"><a href="análisis-de-éxitofracaso-académico.html#cb27-15" tabindex="-1"></a>    <span class="at">aprobados =</span> <span class="fu">sum</span>(status <span class="sc">==</span> <span class="st">&quot;Aprobado&quot;</span>),</span>
+<span id="cb27-16"><a href="análisis-de-éxitofracaso-académico.html#cb27-16" tabindex="-1"></a>    <span class="at">tasa_aprobacion =</span> <span class="fu">mean</span>(status <span class="sc">==</span> <span class="st">&quot;Aprobado&quot;</span>) <span class="sc">*</span> <span class="dv">100</span>,</span>
+<span id="cb27-17"><a href="análisis-de-éxitofracaso-académico.html#cb27-17" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span></span>
+<span id="cb27-18"><a href="análisis-de-éxitofracaso-académico.html#cb27-18" tabindex="-1"></a>  )</span>
+<span id="cb27-19"><a href="análisis-de-éxitofracaso-académico.html#cb27-19" tabindex="-1"></a></span>
+<span id="cb27-20"><a href="análisis-de-éxitofracaso-académico.html#cb27-20" tabindex="-1"></a><span class="fu">kable</span>(pass_stats,</span>
+<span id="cb27-21"><a href="análisis-de-éxitofracaso-académico.html#cb27-21" tabindex="-1"></a>      <span class="at">caption =</span> <span class="st">&quot;Tasas de aprobación por materia&quot;</span>,</span>
+<span id="cb27-22"><a href="análisis-de-éxitofracaso-académico.html#cb27-22" tabindex="-1"></a>      <span class="at">digits =</span> <span class="dv">1</span>,</span>
+<span id="cb27-23"><a href="análisis-de-éxitofracaso-académico.html#cb27-23" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Materia&quot;</span>, <span class="st">&quot;Total&quot;</span>, <span class="st">&quot;Aprobados&quot;</span>, <span class="st">&quot;Tasa Aprobación (%)&quot;</span>))</span></code></pre></div>
+<table>
+<caption><span id="tab:binary-analysis">Table 4.1: </span>Tasas de aprobación por materia</caption>
+<thead>
+<tr class="header">
+<th align="left">Materia</th>
+<th align="right">Total</th>
+<th align="right">Aprobados</th>
+<th align="right">Tasa Aprobación (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Math</td>
+<td align="right">395</td>
+<td align="right">265</td>
+<td align="right">67.1</td>
+</tr>
+<tr class="even">
+<td align="left">Portuguese</td>
+<td align="right">649</td>
+<td align="right">549</td>
+<td align="right">84.6</td>
+</tr>
+</tbody>
+</table>
+<div id="factores-asociados-al-éxito" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Factores Asociados al Éxito<a href="#factores-asociados-al-%C3%A9xito" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="análisis-de-éxitofracaso-académico.html#cb28-1" tabindex="-1"></a><span class="co"># Análisis de proporciones de éxito por categorías</span></span>
+<span id="cb28-2"><a href="análisis-de-éxitofracaso-académico.html#cb28-2" tabindex="-1"></a>success_plots <span class="ot">&lt;-</span> <span class="fu">map</span>(cats_key, <span class="sc">~</span>{</span>
+<span id="cb28-3"><a href="análisis-de-éxitofracaso-académico.html#cb28-3" tabindex="-1"></a>  <span class="fu">ggplot</span>(df_bin, <span class="fu">aes</span>(.data[[.x]], <span class="at">fill =</span> status)) <span class="sc">+</span></span>
+<span id="cb28-4"><a href="análisis-de-éxitofracaso-académico.html#cb28-4" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;fill&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-5"><a href="análisis-de-éxitofracaso-académico.html#cb28-5" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>subject) <span class="sc">+</span></span>
+<span id="cb28-6"><a href="análisis-de-éxitofracaso-académico.html#cb28-6" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Reprobado&quot;</span> <span class="ot">=</span> <span class="st">&quot;#D9D9D9&quot;</span>, <span class="st">&quot;Aprobado&quot;</span> <span class="ot">=</span> <span class="st">&quot;#31A354&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb28-7"><a href="análisis-de-éxitofracaso-académico.html#cb28-7" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> percent) <span class="sc">+</span></span>
+<span id="cb28-8"><a href="análisis-de-éxitofracaso-académico.html#cb28-8" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(<span class="st">&quot;Proporción de aprobados por&quot;</span>, .x), </span>
+<span id="cb28-9"><a href="análisis-de-éxitofracaso-académico.html#cb28-9" tabindex="-1"></a>         <span class="at">x =</span> .x, <span class="at">y =</span> <span class="st">&quot;Proporción&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-10"><a href="análisis-de-éxitofracaso-académico.html#cb28-10" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>)</span>
+<span id="cb28-11"><a href="análisis-de-éxitofracaso-académico.html#cb28-11" tabindex="-1"></a>})</span>
+<span id="cb28-12"><a href="análisis-de-éxitofracaso-académico.html#cb28-12" tabindex="-1"></a></span>
+<span id="cb28-13"><a href="análisis-de-éxitofracaso-académico.html#cb28-13" tabindex="-1"></a><span class="fu">do.call</span>(gridExtra<span class="sc">::</span>grid.arrange, <span class="fu">c</span>(success_plots[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="at">ncol =</span> <span class="dv">2</span>))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:success-factors"></span>
+<img src="bookdown-demo_files/figure-html/success-factors-1.png" alt="Factores asociados al éxito académico" width="3000" />
+<p class="caption">
+Figure 4.1: Factores asociados al éxito académico
+</p>
+</div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="análisis-de-éxitofracaso-académico.html#cb29-1" tabindex="-1"></a><span class="co"># Análisis de variables numéricas por estado</span></span>
+<span id="cb29-2"><a href="análisis-de-éxitofracaso-académico.html#cb29-2" tabindex="-1"></a>nums_success <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(nums_key, <span class="st">&quot;g3&quot;</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]  <span class="co"># Top 4 variables</span></span>
+<span id="cb29-3"><a href="análisis-de-éxitofracaso-académico.html#cb29-3" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="análisis-de-éxitofracaso-académico.html#cb29-4" tabindex="-1"></a>numeric_success_plots <span class="ot">&lt;-</span> <span class="fu">map</span>(nums_success, <span class="sc">~</span>{</span>
+<span id="cb29-5"><a href="análisis-de-éxitofracaso-académico.html#cb29-5" tabindex="-1"></a>  <span class="fu">ggplot</span>(df_bin, <span class="fu">aes</span>(status, .data[[.x]], <span class="at">fill =</span> status)) <span class="sc">+</span></span>
+<span id="cb29-6"><a href="análisis-de-éxitofracaso-académico.html#cb29-6" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">outlier.alpha =</span> .<span class="dv">25</span>, <span class="at">width =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb29-7"><a href="análisis-de-éxitofracaso-académico.html#cb29-7" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>subject, <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>) <span class="sc">+</span></span>
+<span id="cb29-8"><a href="análisis-de-éxitofracaso-académico.html#cb29-8" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Reprobado&quot;</span> <span class="ot">=</span> <span class="st">&quot;#FDD0A2&quot;</span>, <span class="st">&quot;Aprobado&quot;</span> <span class="ot">=</span> <span class="st">&quot;#9ECAE1&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb29-9"><a href="análisis-de-éxitofracaso-académico.html#cb29-9" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb29-10"><a href="análisis-de-éxitofracaso-académico.html#cb29-10" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(.x, <span class="st">&quot;por estado académico&quot;</span>), <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> .x)</span>
+<span id="cb29-11"><a href="análisis-de-éxitofracaso-académico.html#cb29-11" tabindex="-1"></a>})</span>
+<span id="cb29-12"><a href="análisis-de-éxitofracaso-académico.html#cb29-12" tabindex="-1"></a></span>
+<span id="cb29-13"><a href="análisis-de-éxitofracaso-académico.html#cb29-13" tabindex="-1"></a><span class="fu">do.call</span>(gridExtra<span class="sc">::</span>grid.arrange, <span class="fu">c</span>(numeric_success_plots, <span class="at">ncol =</span> <span class="dv">2</span>))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:numeric-success"></span>
+<img src="bookdown-demo_files/figure-html/numeric-success-1.png" alt="Distribución de variables numéricas por estado académico" width="3000" />
+<p class="caption">
+Figure 4.2: Distribución de variables numéricas por estado académico
+</p>
+</div>
+<p><strong>Factores Críticos de Éxito Identificados:</strong></p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Aspiraciones Educativas:</strong> Los estudiantes que planean continuar con educación superior tienen tasas de aprobación 80.7% vs 48.3% de quienes no planean hacerlo.</p></li>
+<li><p><strong>Historial Académico:</strong> Los estudiantes sin reprobaciones previas muestran tasas de éxito significativamente superiores.</p></li>
+<li><p><strong>Acceso a Recursos:</strong> El acceso a internet y apoyo educativo se correlaciona positivamente con el éxito académico.</p></li>
+</ol>
+<hr />
+
+</div>
+</div>
+<div id="conclusiones-y-recomendaciones" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Conclusiones y Recomendaciones<a href="análisis-de-éxitofracaso-académico.html#conclusiones-y-recomendaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>###Hallazgos Principales</p>
+<div id="diferencias-por-materia" class="section level4 hasAnchor" number="4.2.0.1">
+<h4><span class="header-section-number">4.2.0.1</span> Diferencias por Materia<a href="análisis-de-éxitofracaso-académico.html#diferencias-por-materia" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><strong>Portugués presenta mejor rendimiento general</strong> que Matemáticas (media: 11.91 vs 10.42)</li>
+<li><strong>Matemáticas muestra mayor variabilidad</strong> en las calificaciones, sugiriendo polarización en el rendimiento</li>
+<li>Las <strong>correlaciones entre predictores y G3 son consistentes</strong> entre materias, indicando factores comunes de éxito</li>
+</ul>
+</div>
+<div id="predictores-clave-del-rendimiento" class="section level4 hasAnchor" number="4.2.0.2">
+<h4><span class="header-section-number">4.2.0.2</span> Predictores Clave del Rendimiento<a href="análisis-de-éxitofracaso-académico.html#predictores-clave-del-rendimiento" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><strong>Rendimiento previo (G1, G2):</strong> Factor más fuerte (r &gt; 0.8)</li>
+<li><strong>Historial de reprobaciones:</strong> Predictor negativo crítico</li>
+<li><strong>Aspiraciones educativas:</strong> Diferenciador importante del éxito</li>
+<li><strong>Acceso a recursos tecnológicos:</strong> Ventaja competitiva</li>
+<li><strong>Tiempo de estudio:</strong> Correlación positiva moderada pero consistente</li>
+</ol>
+</div>
+<div id="patrones-de-riesgo-académico" class="section level4 hasAnchor" number="4.2.0.3">
+<h4><span class="header-section-number">4.2.0.3</span> Patrones de Riesgo Académico<a href="#patrones-de-riesgo-acad%C3%A9mico" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Estudiantes con <strong>múltiples reprobaciones</strong> tienen probabilidades extremadamente bajas de éxito</li>
+<li>La <strong>combinación de bajo apoyo familiar y escolar</strong> crea vulnerabilidad académica</li>
+<li><strong>Altas ausencias</strong> se asocian sistemáticamente con bajo rendimiento</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="referencias-y-metodología" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Referencias y Metodología<a href="#referencias-y-metodolog%C3%ADa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Dataset:</strong> P. Cortez and A. Silva. Using Data Mining to Predict Secondary School Student Performance. In A. Brito and J. Teixeira Eds., Proceedings of 5th FUture BUsiness TEChnology Conference (FUBUTEC 2008) pp. 5-12, Porto, Portugal, April, 2008, EUROSIS, ISBN 978-9077381-39-7.</p>
+<p><strong>Herramientas utilizadas:</strong>
+- R R version 4.5.1 (2025-06-13 ucrt)
+- Tidyverse 2.0.0
+- GGally 2.3.0</p>
+<hr />
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="análisis-multivariado-panel-exploratorio.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
