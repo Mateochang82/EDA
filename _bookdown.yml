@@ -7,4 +7,5 @@ output_dir: "docs"
 
 rmd_files:
   EDA.Rmd
+  Analisis-exploratorio-UCI-student-performance.Rmd
 
