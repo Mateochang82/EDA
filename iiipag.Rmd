@@ -136,8 +136,8 @@ print(p2)
 
 **Análisis del Rendimiento por Materia:**
 
-- **Matemáticas:** Media de `r round(g3_stats$media[g3_stats$subject == "Math"], 2)` con desviación estándar de `r round(g3_stats$desv_std[g3_stats$subject == "Math"], 2)`
-- **Portugués:** Media de `r round(g3_stats$media[g3_stats$subject == "Portuguese"], 2)` con desviación estándar de `r round(g3_stats$desv_std[g3_stats$subject == "Portuguese"], 2)`
+En las dos figuras se ve un patrón claro: Portugués concentra a la mayoría de estudiantes en notas medias–altas, mientras Matemáticas está más esparcida y con una cola izquierda marcada (ceros y reprobaciones). Las densidades lo confirman: el pico de Portugués se ubica alrededor de 11–13, y en Matemáticas la curva se “aplana” y cae antes.
 
-`r if(g3_stats$media[g3_stats$subject == "Portuguese"] > g3_stats$media[g3_stats$subject == "Math"]) {"**Deducción clave:** Los estudiantes obtienen calificaciones significativamente más altas en Portugués que en Matemáticas, sugiriendo que Matemáticas presenta mayor dificultad académica o que los estudiantes tienen mejor dominio de su lengua materna."} else {"**Deducción clave:** Las calificaciones son similares entre materias, indicando niveles de dificultad comparables."}`
+En Matemáticas (n=395) la variabilidad es alta (DE≈4.6). Casi 1 de cada 10 termina con G3=0 y 1 de cada 3 queda por debajo de 10. La mayor parte se concentra entre 10 y 14 (≈49%), con menor presencia en los extremos. Esto sugiere un grupo relevante en riesgo y un desempeño más irregular, posiblemente sensible a ausencias o a brechas de base.
 
+En Portugués (n=649) la distribución es más compacta (DE≈3.2). Los ceros son raros (≈2%) y solo 15% está por debajo de 10. La zona típica es 10–14 (≈64%), y cerca de 1 de cada 5 alcanza 15 o más. La impresión general es de mayor estabilidad alrededor del “promedio alto”.

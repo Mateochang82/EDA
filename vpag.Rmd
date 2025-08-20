@@ -256,10 +256,21 @@ do.call(gridExtra::grid.arrange, c(plots_cat, ncol = 2))
 
 **Insights de Variables Categóricas:**
 
-1. **Higher Education Aspiration:** Los estudiantes que aspiran a educación superior muestran rendimiento significativamente mayor.
+Sex (F/M).
+En Matemáticas los hombres sacan, en promedio, ~0.95 pts más que las mujeres (10.91 vs 9.97, n=187 vs 208). En Portugués pasa lo contrario: las mujeres superan a los hombres por ~0.85 pts (12.25 vs 11.41, n=383 vs 266). O sea, no es una brecha general, depende de la materia.
 
-2. **Internet Access:** El acceso a internet se asocia con mejores calificaciones, sugiriendo ventajas en recursos educativos.
+Address (R/U).
+Vivir en zona urbana se asocia con mejores notas en ambas asignaturas: +1.16 pts en Matemáticas (10.67 U vs 9.51 R, n=307/88) y +1.18 pts en Portugués (12.26 U vs 11.09 R, n=452/197). Huele a ventaja de recursos (acceso a refuerzos, conectividad, etc.).
 
-3. **School Support:** El apoyo escolar adicional muestra patrones complejos que requieren análisis más profundo.
+School support (schoolsup).
+Quienes reciben apoyo llegan con medias más bajas: en Matemáticas 9.43 (n=51) vs 10.56 sin apoyo (n=344); en Portugués 11.28 (n=68) vs 11.98 (n=581). No lo leo como “el apoyo baja el rendimiento”, sino como sesgo de selección: el apoyo se dirige a quienes ya venían con dificultades. De hecho, su dispersión es menor (DE 2.87 vs 4.77 en Mat), señal de contención más que de sobresalientes.
 
+Aspiración a educación superior (higher).
+Aquí la diferencia sí es grande: los que planean seguir estudios sacan +3.8 pts en Matemáticas (10.61 vs 6.80, n=375/20) y +3.48 pts en Portugués (12.28 vs 8.80, n=580/69). En los boxplots de Mat se ve claro: entre quienes no piensan continuar hay muchos ceros. Esto sugiere motivación/expectativas como marcador fuerte.
+
+Internet en casa.
+Tener internet se asocia con un pequeño empujón: +1.21 pts en Matemáticas (10.62 vs 9.41, n=329/66) y +1.15 pts en Portugués (12.17 vs 11.03, n=498/151). Nada dramático, pero consistente.
+
+Qué me llevo a la práctica.
+Si hay que priorizar, yo miraría primero a estudiantes rurales, sin internet y sin plan de educación superior; ahí están los gaps más claros. El efecto de schoolsup hay que leerlo con cuidado (selección): sirve para contener a quienes ya venían rezagados, no para “subir” a los de arriba.
 ---

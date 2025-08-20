@@ -22,11 +22,17 @@ Este documento presenta un análisis exploratorio exhaustivo del dataset "Studen
 
 ##  Introducción y Objetivos
 
-### Contexto del Dataset
+**Contexto del Dataset**
 
-El dataset Student Performance contiene información de estudiantes de educación secundaria portugueses, recopilada en dos escuelas durante el período académico 2005-2006. Los datos incluyen 33 variables que abarcan desde características demográficas hasta factores socioeconómicos, familiares y académicos.
+Este trabajo realiza un **análisis exploratorio de datos (EDA)** utilizando el dataset *Student Performance* publicado por la Universidad de California Irvine (UCI).\
+La base contiene información de estudiantes portugueses de secundaria en dos asignaturas: **Matemáticas** y **Lengua Portuguesa**, recolectada durante 2005–2006.
 
-### Objetivos del Análisis
+Incluye 33 variables relacionadas con aspectos: - **Demográficos:** edad, sexo, dirección.\
+- **Socioeconómicos:** educación de los padres, ocupación, acceso a internet.\
+- **Académicos:** tiempo de estudio, ausencias, reprobaciones previas, notas G1, G2 y nota final G3.\
+- **Familiares/personales:** apoyo escolar, consumo de alcohol, actividades, relaciones.
+
+**Objetivos del Análisis**
 
 1. **Caracterizar el rendimiento académico** en ambas materias (Matemáticas y Portugués)
 2. **Identificar patrones de valores perdidos** y evaluar la calidad de los datos
@@ -130,7 +136,7 @@ cat("Variables numéricas (", length(numeric_vars), "):", paste(numeric_vars, co
 
 ## Análisis de Valores Perdidos
 
-### Patrón General de Missingness
+
 
 ```{r missing-analysis}
 # Análisis de valores perdidos por variable
@@ -173,7 +179,5 @@ ggplot(na_summary_by_subj, aes(variable, pct_na, fill = subject)) +
   theme(legend.position = "bottom")
 ```
 
-**Conclusión sobre Missingness:** 
-`r if(max(na_summary_overall$pct_na_overall) == 0) {"Los datos están completos, sin valores perdidos, lo que indica una excelente calidad en la recolección de información. Esto elimina la necesidad de técnicas de imputación y permite proceder directamente con el análisis."} else {paste("Se detectaron valores perdidos en", sum(na_summary_overall$pct_na_overall > 0), "variables, con un máximo de", round(max(na_summary_overall$pct_na_overall), 1), "% de missingness.")}`
 
 ---

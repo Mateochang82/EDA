@@ -176,19 +176,23 @@ kable(g3_stats,
 
 ```
 
-### Diferencias por Materia
+**Diferencias por Materia**
 - **Portugués presenta mejor rendimiento general** que Matemáticas (media: `r round(g3_stats$media[g3_stats$subject == "Portuguese"], 2)` vs `r round(g3_stats$media[g3_stats$subject == "Math"], 2)`)
 - **Matemáticas muestra mayor variabilidad** en las calificaciones, sugiriendo polarización en el rendimiento
 - Las **correlaciones entre predictores y G3 son consistentes** entre materias, indicando factores comunes de éxito
 
-#### Predictores Clave del Rendimiento
+**Conclusión sobre Missingness:** 
+Los datos están completos, sin valores perdidos, lo que indica una excelente calidad en la recolección de información. Esto elimina la necesidad de técnicas de imputación y permite proceder directamente con el análisis.
+
+
+**Predictores Clave del Rendimiento**
 1. **Rendimiento previo (G1, G2):** Factor más fuerte (r > 0.8)
 2. **Historial de reprobaciones:** Predictor negativo crítico
 3. **Aspiraciones educativas:** Diferenciador importante del éxito
 4. **Acceso a recursos tecnológicos:** Ventaja competitiva
 5. **Tiempo de estudio:** Correlación positiva moderada pero consistente
 
-#### Patrones de Riesgo Académico
+**Patrones de Riesgo Académico**
 - Estudiantes con **múltiples reprobaciones** tienen probabilidades extremadamente bajas de éxito
 - La **combinación de bajo apoyo familiar y escolar** crea vulnerabilidad académica
 - **Altas ausencias** se asocian sistemáticamente con bajo rendimiento
